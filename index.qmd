@@ -11,6 +11,7 @@ execute:
 
 # 🌳 Decision Tree Challenge - Feature Importance and Variable Encoding
 
+See @sec-discussion-answers for the discussion answers. 
 ## Challenge Overview
 
 **Your Mission:** Create a simple GitHub Pages site that demonstrates how decision trees measure feature importance and analyzes the critical differences between categorical and numerical variable encoding. You'll answer two key discussion questions by adding narrative to a pre-built analysis and posting those answers to your GitHub Pages site as a rendered HTML document.
@@ -112,7 +113,8 @@ cat("Model built with", sum(tree_model$frame$var == "<leaf>"), "terminal nodes\n
 ```{python}
 #| label: load-and-model-python
 #| echo: true
-
+#| eval: false
+#| python.reticulate: false
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -183,6 +185,8 @@ if (require(rpart.plot, quietly = TRUE)) {
 #| echo: true
 #| fig-width: 10
 #| fig-height: 6
+#| eval: false
+#| python.reticulate: false
 
 # Visualize tree
 plt.figure(figsize=(10, 6))
@@ -210,7 +214,6 @@ plt.show()
 #| echo: false
 #| message: false
 #| warning: false
-
 # Extract and display feature importance
 importance_df <- data.frame(
   Feature = names(tree_model$variable.importance),
@@ -247,7 +250,8 @@ ggplot(importance_df, aes(x = reorder(Feature, Importance), y = Importance)) +
 ```{python}
 #| label: feature-importance-python
 #| echo: false
-
+#| eval: false
+#| python.reticulate: false
 # Extract and display feature importance
 importance_df = pd.DataFrame({
     'Feature': X_train.columns,
@@ -266,6 +270,8 @@ zipcode_importance = importance_df[importance_df['Feature'] == 'zipCode']['Impor
 #| echo: false
 #| fig-width: 8
 #| fig-height: 5
+#| eval: false
+#| python.reticulate: false 
 
 # Plot feature importance
 plt.figure(figsize=(8, 5))
@@ -354,6 +360,9 @@ if(zipcode_in_tree) {
 #| label: categorical-python
 #| echo: true
 #| include: false
+#| eval: false
+#| python.reticulate: false
+
 # One-hot encode zipCode
 import pandas as pd
 
@@ -426,6 +435,8 @@ if (require(rpart.plot, quietly = TRUE)) {
 #| echo: true
 #| fig-width: 10
 #| fig-height: 6
+#| eval: false
+#| python.reticulate: false
 
 # Visualize tree with one-hot encoded zipCode
 plt.figure(figsize=(10, 6))
@@ -473,7 +484,8 @@ ggplot(importance_cat, aes(x = reorder(Feature, Importance), y = Importance)) +
 #| echo: false
 #| fig-width: 8
 #| fig-height: 5
-
+#| eval: false
+#| python.reticulate: false
 # Plot feature importance for categorical zipCode
 plt.figure(figsize=(8, 5))
 plt.barh(range(len(importance_cat_df)), importance_cat_df['Importance'], 
@@ -570,6 +582,9 @@ plt.show()
 
 2. **R vs Python Implementation Differences:** When modelling zip code as a categorical variable, the output tree and feature importance differs quite significantly between R and Python. Investigate why this is the case. Which language would you say does a better job of modelling zip code as a categorical variable? Why is this the case? Do you see any documentation suggesting the other language does a better job? If so, please provide a quote from the documentation.
 
+## Discussion Answers {#sec-discussion-answers}
+1. Given what I know about zip codes and real estate prices, zip code should be modelled as a categorical variable. Zip codes are categorical variables that represent different locations that all have different characteristics that have no numerical meaning. 
+2. This is the case that R does a better job of modeling zip code as a categorical variable than Python because Python uses one-hot coding by default and scikit-learn doesn't support categorical variables. The website states, "However, the scikit-learn implementation does not support categorical variables for now." This forces the one-hot coding which creates separate dummy variables for each zip code. R treats the zip code as a categorical variable, with no inherent numerical order, proving it does a better job of modeling zip code as a categorical variable than Python.
 ::: {.callout-important}
 ## 📋 Important Note on AI Usage
 
