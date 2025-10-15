@@ -574,11 +574,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="sec-discussion-answers">Discussion Answers</h2>
 <ol type="1">
 <li>Given what I know about zip codes and real estate prices, zip code should be modelled as a categorical variable. Zip codes are categorical variables that represent different locations that all have different characteristics that have no numerical meaning.</li>
-<li>This is the case that R does a better job of modeling zip code as a categorical variable than Python because Python uses one-hot coding by default and scikit-learn doesn’t support categorical variables. The website states, “However, the scikit-learn implementation does not support categorical variables for now.” This forces the one-hot coding which creates separate dummy variables for each zip code. R treats the zip code as a categorical variable, with no inherent numerical order, proving it does a better job of modeling zip code as a categorical variable than Python. ::: {.callout-important} ## 📋 Important Note on AI Usage</li>
+<li>This is the case that R does a better job of modeling zip code as a categorical variable than Python because Python uses one-hot coding by default and scikit-learn doesn’t support categorical variables. The website states, “However, the scikit-learn implementation does not support categorical variables for now.” This forces the one-hot coding which creates separate dummy variables for each zip code. R treats the zip code as a categorical variable, with no inherent numerical order, proving it does a better job of modeling zip code as a categorical variable than Python.</li>
 </ol>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>📋 Important Note on AI Usage
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p><strong>No coding assistance expected:</strong> This challenge is designed for independent analysis and critical thinking. You are <strong>not</strong> expected to use AI for coding help or to write code for you. You are <strong>not</strong> expected to code at all unless curious about any ideas you may have.</p>
 <p><strong>AI as unreliable thought partner:</strong> If you choose to use AI tools, treat them as an unreliable thought partner. AI responses should be verified and cross-checked rather than accepted at face value.</p>
-<p><strong>Documentation verification required:</strong> For question 2, you must investigate the official documentation for both <code>rpart</code> (R) and <code>sklearn.tree.DecisionTreeRegressor</code> (Python) to understand why the two implementations yield vastly different results when handling categorical variables. Your analysis should be grounded in the actual documentation and technical specifications of these libraries, not AI-generated explanations. AI can be helpful in digesting the documentation, but you must verify the information is correct. :::</p>
+<p><strong>Documentation verification required:</strong> For question 2, you must investigate the official documentation for both <code>rpart</code> (R) and <code>sklearn.tree.DecisionTreeRegressor</code> (Python) to understand why the two implementations yield vastly different results when handling categorical variables. Your analysis should be grounded in the actual documentation and technical specifications of these libraries, not AI-generated explanations. AI can be helpful in digesting the documentation, but you must verify the information is correct.</p>
+</div>
+</div>
 </section>
 <section id="grading-rubric" class="level2">
 <h2 class="anchored" data-anchor-id="grading-rubric">Grading Rubric 🎓</h2>

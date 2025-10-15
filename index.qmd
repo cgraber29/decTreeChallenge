@@ -585,6 +585,8 @@ plt.show()
 ## Discussion Answers {#sec-discussion-answers}
 1. Given what I know about zip codes and real estate prices, zip code should be modelled as a categorical variable. Zip codes are categorical variables that represent different locations that all have different characteristics that have no numerical meaning. 
 2. This is the case that R does a better job of modeling zip code as a categorical variable than Python because Python uses one-hot coding by default and scikit-learn doesn't support categorical variables. The website states, "However, the scikit-learn implementation does not support categorical variables for now." This forces the one-hot coding which creates separate dummy variables for each zip code. R treats the zip code as a categorical variable, with no inherent numerical order, proving it does a better job of modeling zip code as a categorical variable than Python.
+
+
 ::: {.callout-important}
 ## 📋 Important Note on AI Usage
 
